@@ -16,7 +16,6 @@ const userBusiness = new UserBusiness(
 export class UserController {
   async signup(req: Request, res: Response) {
     try {
-
         const input: UserInputDTO = {
           email: req.body.email,
           name: req.body.name,
