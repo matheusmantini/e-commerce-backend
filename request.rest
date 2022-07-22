@@ -1,0 +1,40 @@
+# Signup
+
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+  "name": "matheus",
+  "email": "matheus@gmail.com",
+  "password": "123456",
+  "role": "ADMIN"
+}
+
+###
+# Login
+
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+  "email": "matheus@gmail.com",
+  "password": "123456"
+}
+
+###
+# Get Address by CEP
+
+GET http://localhost:3003/user/address/33333050
+
+###
+# Add User Address
+
+POST http://localhost:3003/user/address
+Content-Type: application/json
+
+{
+  "cep": "33025010",
+  "numero": 123,
+  "complemento": "casa",
+  "userEmail": "matheus@gmail.com"
+}

@@ -23,10 +23,27 @@ export class User {
 }
 
 export interface UserInputDTO {
+  name: string;
   email: string;
   password: string;
-  name: string;
   role: string;
+}
+
+export interface UserAddressInputDTO {
+  cep: string;
+  logradouro: string;
+  numero: number;
+  complemento?: string;
+  bairro: string;
+  cidade: string;
+  estado: string;
+}
+
+export interface UserAddressDTO {
+  cep: string;
+  numero: number;
+  complemento?: string;
+  userEmail: string
 }
 
 export interface LoginInputDTO {
