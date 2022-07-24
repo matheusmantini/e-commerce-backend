@@ -23,13 +23,19 @@ export class UserController {
         name: req.body.name,
         password: req.body.password,
         role: req.body.role,
+        cpf: req.body.cpf,
       };
 
       const token = await userBusiness.createUser(input);
 
       res.status(200).send({ token });
-    } catch (error) {
-      throw new CustomError(500, "An unexpected error ocurred");
+    } catch (err) {
+      console.log(err);
+      /* if (err instanceof Error) {
+        res.status(400).send({ message: err.message });
+      }
+      return; */
+      /* throw new CustomError(500, "An unexpected error ocurred"); */
     }
   }
 

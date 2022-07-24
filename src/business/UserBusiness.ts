@@ -27,13 +27,20 @@ export class UserBusiness {
       user.name,
       user.email,
       hashPassword,
-      user.role
+      user.role,
+      user.cpf
     );
+    
+    const userFromDB = await this.userDatabase.getUserByEmail(user.email);
 
-    const accessToken = this.authenticator.generateToken({
-      id,
-      role: user.role,
-    });
+    if (user.cpf === userFromDB.cpf || user.email === userFromDB.email){
+      throw new CustomError(400, "Já existe um usuário cadastrado com o cpf ou email informado!");
+    }
+
+      const accessToken = this.authenticator.generateToken({
+        id,
+        role: user.role,
+      });
 
     return accessToken;
   }

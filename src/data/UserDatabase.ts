@@ -12,7 +12,8 @@ export class UserDatabase extends BaseDatabase {
       user.name,
       user.email,
       user.password,
-      User.stringToUserRole(user.role)
+      User.stringToUserRole(user.role),
+      user.cpf
     );
   }
 
@@ -21,7 +22,8 @@ export class UserDatabase extends BaseDatabase {
     name: string,
     email: string,
     password: string,
-    role: string
+    role: string,
+    cpf: string
   ): Promise<void> {
     try {
       await BaseDatabase.connection
@@ -31,10 +33,11 @@ export class UserDatabase extends BaseDatabase {
           email,
           password,
           role,
+          cpf,
         })
         .into(UserDatabase.TABLE_USER);
     } catch (error) {
-      throw new CustomError(500, "An unexpected error ocurred");
+      throw new Error(error.sqlMessage || error.message);
     }
   }
 
@@ -47,7 +50,7 @@ export class UserDatabase extends BaseDatabase {
 
       return UserDatabase.toUserModel(result[0]);
     } catch (error) {
-      throw new CustomError(500, "An unexpected error ocurred");
+      throw new Error(error.sqlMessage || error.message);
     }
   }
 
@@ -77,8 +80,7 @@ export class UserDatabase extends BaseDatabase {
         })
         .into(UserDatabase.TABLE_USER_ADDRESS);
     } catch (error) {
-      console.log(error);
-      throw new CustomError(500, "An unexpected error ocurred");
+      throw new Error(error.sqlMessage || error.message);
     }
   }
 }

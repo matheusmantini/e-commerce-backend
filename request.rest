@@ -4,10 +4,11 @@ POST http://localhost:3003/user/signup
 Content-Type: application/json
 
 {
-  "name": "matheus",
-  "email": "matheus@gmail.com",
+  "name": "teste",
+  "email": "teste@gmail.com",
   "password": "123456",
-  "role": "ADMIN"
+  "role": "NORMAL",
+  "cpf": "22233344466"
 }
 
 ###

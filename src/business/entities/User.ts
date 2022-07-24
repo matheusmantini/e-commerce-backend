@@ -6,18 +6,18 @@ export class User {
     public readonly name: string,
     public readonly email: string,
     public readonly password: string,
-    public readonly role: UserRole
-  ) { }
-
+    public readonly role: UserRole,
+    public readonly cpf: string,
+  ) {}
 
   static stringToUserRole(input: string): UserRole {
     switch (input) {
-        case "NORMAL":
-          return UserRole.NORMAL;
-        case "ADMIN":
-          return UserRole.ADMIN;
-        default:
-          throw new CustomError(422,"Invalid user role");
+      case "NORMAL":
+        return UserRole.NORMAL;
+      case "ADMIN":
+        return UserRole.ADMIN;
+      default:
+        throw new CustomError(422, "Invalid user role");
     }
   }
 }
@@ -27,6 +27,7 @@ export interface UserInputDTO {
   email: string;
   password: string;
   role: string;
+  cpf: string;
 }
 
 export interface UserAddressInputDTO {
