@@ -1,9 +1,0 @@
-HTTP/1.1 200 OK
-X-Powered-By: Express
-Content-Type: application/json; charset=utf-8
-Content-Length: 219
-ETag: W/"db-kXWxK8ufg8hLpiEZQ1B6Av7Xmg0"
-Date: Wed, 20 Jul 2022 23:23:47 GMT
-Connection: close
-
-{"token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTNhNzUwLTU2OWItNDYxZS05ODgyLWNlYzYyZDZkNmRiNSIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY1ODM1OTQyNywiZXhwIjoxNjU4NDQ1ODI3fQ.kcIPuw7RC9tMT4Vu7sx3Y3OhYHik-Hcwao8-fxxRDcY"}
