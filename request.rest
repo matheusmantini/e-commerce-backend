@@ -39,3 +39,15 @@ Content-Type: application/json
   "complemento": "casa",
   "userEmail": "matheus@gmail.com"
 }
+
+###
+# Add New Products
+
+POST http://localhost:3003/product/create
+Content-Type: application/json
+
+{
+  "name": "Mouse óptico",
+  "price": 127.32,
+  "image_url": "https://i.zst.com.br/thumbs/12/1e/16/1724303697.jpg"
+}

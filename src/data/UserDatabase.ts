@@ -1,6 +1,5 @@
 import { BaseDatabase } from "./BaseDatabase";
 import { User } from "../business/entities/User";
-import { CustomError } from "../business/error/CustomError";
 
 export class UserDatabase extends BaseDatabase {
   private static TABLE_USER = "ecom_users";
