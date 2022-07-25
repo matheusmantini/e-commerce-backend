@@ -1,6 +1,7 @@
 import express from "express";
 import { AddressInfo } from "net";
 import { productRouter } from "./controller/routes/productRouter";
+import { purchaseRouter } from "./controller/routes/purchaseRouter";
 import { userRouter } from "./controller/routes/userRouter";
 
 const app = express();
@@ -9,6 +10,7 @@ app.use(express.json());
 
 app.use("/user", userRouter);
 app.use("/product", productRouter);
+app.use("/purchase", purchaseRouter);
 
 const server = app.listen(3003, () => {
   if (server) {

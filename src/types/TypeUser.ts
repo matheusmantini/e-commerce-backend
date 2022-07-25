@@ -1,8 +1,3 @@
-export type authenticationData = {
-  id: string;
-  role?: string;
-};
-
 export type Address = {
   id: string;
   cep: string;

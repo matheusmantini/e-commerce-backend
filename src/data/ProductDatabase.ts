@@ -1,5 +1,4 @@
 import { BaseDatabase } from "./BaseDatabase";
-import { Product } from "../business/entities/Product";
 
 export class ProductDatabase extends BaseDatabase {
   private static TABLE_PRODUCTS = "ecom_products";

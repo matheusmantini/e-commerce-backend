@@ -51,3 +51,16 @@ Content-Type: application/json
   "price": 127.32,
   "image_url": "https://i.zst.com.br/thumbs/12/1e/16/1724303697.jpg"
 }
+
+###
+# Add New Purchase
+
+POST http://localhost:3003/purchase/create
+Content-Type: application/json
+
+{
+  "user_id": "4ab0de2b-1467-441b-8dcb-b399a1730c1c",
+  "product_id": "01f82be2-baf3-4925-994e-66ab39d39eee",
+  "quantity": 5,
+  "total_price": 636.6
+}
